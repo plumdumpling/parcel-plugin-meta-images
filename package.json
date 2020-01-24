@@ -1,17 +1,14 @@
 {
-  "name": "parcel-plugin-metaimage",
-  "version": "1.2.0",
-  "description": "Set absolute URL for og:image and twitter:image meta tags.",
+  "name": "parcel-plugin-meta-images",
+  "version": "1.0.0",
+  "description": "Set absolute URLs for image meta tags",
   "main": "index.js",
   "engines": {
     "node": ">=8"
   },
-  "scripts": {
-    "test": "xo"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Eliepse/parcel-plugin-metaimage.git"
+    "url": "git+https://github.com/plumdumpling/parcel-plugin-meta-images.git"
   },
   "keywords": [
     "parcel",
@@ -23,15 +20,12 @@
     "open graph",
     "image"
   ],
-  "author": "Eliepse <contact@eliepse.fr>",
+  "author": "Leslie Zimmermann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Eliepse/parcel-plugin-metaimage/issues"
+    "url": "https://github.com/plumdumpling/parcel-plugin-meta-images/issues"
   },
-  "homepage": "https://github.com/Eliepse/parcel-plugin-metaimage#readme",
-  "devDependencies": {
-    "xo": "^0.23.0"
-  },
+  "homepage": "https://github.com/plumdumpling/parcel-plugin-meta-images#readme",
   "dependencies": {
     "chalk": "^2.4.2",
     "fs": "^0.0.1-security",

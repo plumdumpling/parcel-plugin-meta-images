@@ -1,50 +1,44 @@
-# parcel-plugin-metaimage
+# parcel-plugin-meta-images
 
-> Set absolute URL for og:image and twitter:image meta tags.
+Sets absolute URLs for `og:image` and `twitter:image` meta tags.
+This is required by the spec and relative URLs will not work on some sites such as Facebook and Twitter.
 
-[![npm](https://img.shields.io/npm/v/parcel-plugin-metaimage.svg)](https://www.npmjs.com/package/parcel-plugin-metaimage)
-
-Sets absolute URLs for `og:image` meta tags. This is required by the spec and relative URLs will not work on some sites such as Twitter.
-
-You can fix this directly in parcel by using `--public-url https://example.com`, however now all your URLs are hardcoded to absolute URLs which may be undesirable and can break things like prerendering.
-
-This plugin uses the value of the `og:url` meta tag to convert `og:image` to an absolute URL.
+This plugin uses the value of the `og:url` meta tag to convert the image paths to an absolute URL.
 
 ## Install
 
 ```shell
-npm install parcel-plugin-metaimage
+npm install --save-dev git+https://github.com/plumdumpling/parcel-plugin-meta-images.git
 ```
 
 ## Usage
 
 Just install this package as a development dependency. Parcel will automatically call it when building your application.
 
-You **must** have both `og:image` and `og:url` meta tags:
+Make sure you have `og:url`, `og:image` and `twitter:image` meta tags in your html files:
 
-```html
-<meta property="twitter:image" content="card.png">
-<meta property="og:image" content="card.png">
+```pug
 <meta property="og:url" content="https://example.com">
+<meta property="og:image" content="../assets/preview-image.png">
+<meta name="twitter:image" content="../assets/twitter-preview-image.png">
 ```
 
 Parcel will generate that into something like this:
 
 ```html
-<meta property="twitter:image" content="/card.9190ce93.png">
-<meta property="og:image" content="/card.9190ce93.png">
 <meta property="og:url" content="https://example.com">
+<meta property="og:image" content="/preview-image.1a2b3c4d.png">
+<meta name="twitter:image" content="/twitter-preview-image.1a2b3c4d.png">
 ```
 
-`parcel-plugin-ogimage` will then update the `og:image` with an absolute URL:
+`parcel-plugin-meta-image` will then update the image paths to an absolute URL:
 
 ```html
-<meta property="twitter:image" content="https://example.com/card.9190ce93.png">
-<meta property="og:image" content="https://example.com/card.9190ce93.png">
 <meta property="og:url" content="https://example.com">
+<meta property="og:image" content="https://example.com/preview-image.1a2b3c4d.png">
+<meta name="twitter:image" content="https://example.com/twitter-preview-image.1a2b3c4d.png">
 ```
 
 ## License
-From Luke Childs and @nothingrandom code
 
-MIT @ Eliepse
+[MIT](https://github.com/plumdumpling/parcel-plugin-meta-images/blob/master/LICENSE)
