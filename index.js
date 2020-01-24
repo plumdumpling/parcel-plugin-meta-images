@@ -41,7 +41,7 @@ module.exports = bundler => {
 			const ogUrlTag = getMetaTag(html, 'og:url');
 
 			if (ogUrlTag) {
-				if(ogImageTag) {
+				if (ogImageTag) {
 					const ogImageContent = getMetaTagContent(ogImageTag);
 					const ogUrlContent = getMetaTagContent(ogUrlTag);
 					const absoluteOgImageUrl = url.resolve(ogUrlContent, ogImageContent);
@@ -51,7 +51,7 @@ module.exports = bundler => {
 					fs.writeFileSync(htmlPath, patchedHtml);
 				}
 
-				if(twitterImageTag) {
+				if (twitterImageTag) {
 					const ogImageContent = getMetaTagContent(twitterImageTag);
 					const ogUrlContent = getMetaTagContent(ogUrlTag);
 					const absoluteTwitterImageUrl = url.resolve(ogUrlContent, ogImageContent);
